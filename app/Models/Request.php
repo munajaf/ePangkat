@@ -2,6 +2,7 @@
 
 namespace App\Models;
 
+use App\Models\Auth\User;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
 use Spatie\QueryBuilder\QueryBuilder;
@@ -28,9 +29,9 @@ class Request extends Model
         'kategori4_syarat2' => 'array',
     ];
 
-    public function requestMarks()
+    public function users()
     {
-        return $this->hasOne(RequestMark::class, 'request_id', 'id');
+        return $this->hasOne(User::class, 'id', 'user_id');
     }
 
     public static function ifExistsRequest()
@@ -48,8 +49,19 @@ class Request extends Model
             ->when(!$admin, function ($query) {
                 return $query->where(['user_id' => auth()->user()->id]);
             })
-            ->with('requestMarks')
             ->get();
+    }
+
+    public static function makePDF()
+    {
+        $data = [
+            'title' => 'First PDF for Medium',
+            'heading' => 'Hello from 99Points.info',
+            'content' => 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry'
+            ];
+
+        $pdf = \PDF::loadView('pdf_view', $data);
+        return $pdf->download('medium.pdf');
     }
 
     #todo admin useable
