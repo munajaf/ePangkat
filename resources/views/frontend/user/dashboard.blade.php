@@ -37,7 +37,8 @@
                                         </a>
 
                                         @can('view backend')
-                                            &nbsp;<a href="{{ route('admin.dashboard')}}" class="btn btn-danger btn-sm mb-1">
+                                            &nbsp;<a href="{{ route('admin.dashboard')}}"
+                                                     class="btn btn-danger btn-sm mb-1">
                                                 <i class="fas fa-user-secret"></i> @lang('navs.frontend.user.administration')
                                             </a>
                                         @endcan
@@ -49,7 +50,8 @@
                                 <div class="card-header">Header</div>
                                 <div class="card-body">
                                     <h4 class="card-title">Info card title</h4>
-                                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                                    <p class="card-text">Some quick example text to build on the card title and make up
+                                        the bulk of the card's content.</p>
                                 </div>
                             </div><!--card-->
                         </div><!--col-md-4-->
@@ -63,13 +65,48 @@
                                         </div><!--card-header-->
 
                                         <div class="card-body">
-                                            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Non qui facilis deleniti expedita fuga ipsum numquam aperiam itaque cum maxime.
+                                            <table class="table">
+                                                <thead>
+                                                <tr>
+                                                    <td>Type</td>
+                                                    <td>Date Requested</td>
+                                                    <td>Status</td>
+                                                    <td>Action</td>
+                                                </tr>
+                                                </thead>
+                                                @foreach($list as $data)
+                                                    <tr>
+                                                        <td>{{$data->type}}</td>
+                                                        <td>{{$data->created_at}}</td>
+                                                        <td>
+                                                            @if($data->status == "rejected")
+                                                                <h5><span class="badge badge-danger">Rejected</span></h5>
+                                                            @elseif($data->status == "pending")
+                                                                <h5><span class="badge badge-warning">Pending</span></h5>
+                                                            @elseif($data->status == "accepted")
+                                                                <h5><span class="badge badge-success">Accepted</span></h5>
+                                                            @endif
+                                                        </td>
+                                                        <td>
+                                                            <a href="/request/{{$data->id}}" >View</a>
+                                                            <a href="/request/{{$data->id}}/edit" >Edit</a>
+                                                            <a href="{{ route('frontend.user.request.destroy', $data->id) }}"
+                                                               data-method="delete"
+                                                               data-trans-button-cancel="@lang('buttons.general.cancel')"
+                                                               data-trans-button-confirm="@lang('buttons.general.crud.delete')"
+                                                               data-trans-title="@lang('strings.backend.general.are_you_sure')"
+                                                            >@lang('buttons.general.crud.delete')</a>
+                                                        </td>
+                                                    </tr>
+                                                @endforeach
+                                            </table>
                                         </div><!--card-body-->
                                     </div><!--card-->
                                 </div><!--col-md-6-->
                             </div><!--row-->
 
-                            <div class="row">
+
+                            {{--<div class="row">
                                 <div class="col">
                                     <div class="card mb-4">
                                         <div class="card-header">
@@ -77,21 +114,8 @@
                                         </div><!--card-header-->
 
                                         <div class="card-body">
-                                            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Non qui facilis deleniti expedita fuga ipsum numquam aperiam itaque cum maxime.
-                                        </div><!--card-body-->
-                                    </div><!--card-->
-                                </div><!--col-md-6-->
-                            </div><!--row-->
-
-                            <div class="row">
-                                <div class="col">
-                                    <div class="card mb-4">
-                                        <div class="card-header">
-                                            Item
-                                        </div><!--card-header-->
-
-                                        <div class="card-body">
-                                            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Non qui facilis deleniti expedita fuga ipsum numquam aperiam itaque cum maxime.
+                                            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Non qui facilis
+                                            deleniti expedita fuga ipsum numquam aperiam itaque cum maxime.
                                         </div><!--card-body-->
                                     </div><!--card-->
                                 </div><!--col-md-6-->
@@ -103,7 +127,8 @@
                                         </div><!--card-header-->
 
                                         <div class="card-body">
-                                            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Non qui facilis deleniti expedita fuga ipsum numquam aperiam itaque cum maxime.
+                                            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Non qui facilis
+                                            deleniti expedita fuga ipsum numquam aperiam itaque cum maxime.
                                         </div><!--card-body-->
                                     </div><!--card-->
                                 </div><!--col-md-6-->
@@ -117,7 +142,8 @@
                                         </div><!--card-header-->
 
                                         <div class="card-body">
-                                            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Non qui facilis deleniti expedita fuga ipsum numquam aperiam itaque cum maxime.
+                                            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Non qui facilis
+                                            deleniti expedita fuga ipsum numquam aperiam itaque cum maxime.
                                         </div><!--card-body-->
                                     </div><!--card-->
                                 </div><!--col-md-6-->
@@ -129,11 +155,12 @@
                                         </div><!--card-header-->
 
                                         <div class="card-body">
-                                            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Non qui facilis deleniti expedita fuga ipsum numquam aperiam itaque cum maxime.
+                                            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Non qui facilis
+                                            deleniti expedita fuga ipsum numquam aperiam itaque cum maxime.
                                         </div><!--card-body-->
                                     </div><!--card-->
                                 </div><!--col-md-6-->
-                            </div><!--row-->
+                            </div><!--row-->--}}
                         </div><!--col-md-8-->
                     </div><!-- row -->
                 </div> <!-- card-body -->

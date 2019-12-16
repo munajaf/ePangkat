@@ -17,12 +17,15 @@
         "creativeorange/gravatar": "~1.0",
         "davejamesmiller/laravel-breadcrumbs": "^5.0",
         "fideloper/proxy": "^4.0",
+        "guzzlehttp/guzzle": "^6.5",
         "lab404/laravel-impersonate": "^1.4",
         "langleyfoxall/laravel-nist-password-rules": "^4.0",
         "laravel/framework": "^6.0",
         "laravel/socialite": "^4.1",
+        "proengsoft/laravel-jsvalidation": "^2.5",
         "spatie/laravel-html": "^2.22",
         "spatie/laravel-permission": "^3.0",
+        "spatie/laravel-query-builder": "^2.3",
         "torann/geoip": "^1.0"
     },
     "require-dev": {

@@ -5,6 +5,7 @@ use App\Http\Controllers\Frontend\ContactController;
 use App\Http\Controllers\Frontend\User\AccountController;
 use App\Http\Controllers\Frontend\User\ProfileController;
 use App\Http\Controllers\Frontend\User\DashboardController;
+use App\Http\Controllers\Frontend\User\RequestController;
 
 /*
  * Frontend Controllers
@@ -23,6 +24,10 @@ Route::group(['middleware' => ['auth', 'password_expires']], function () {
     Route::group(['namespace' => 'User', 'as' => 'user.'], function () {
         // User Dashboard Specific
         Route::get('dashboard', [DashboardController::class, 'index'])->name('dashboard');
+
+        Route::resource('request', 'RequestController');
+        Route::get('request/{id}/makeCreate', 'RequestController@extendCreate')->name('extend.create');
+        Route::patch('requests/{id}', 'RequestController@extendCreateUpdate')->name('extend.update');
 
         // User Account Specific
         Route::get('account', [AccountController::class, 'index'])->name('account');

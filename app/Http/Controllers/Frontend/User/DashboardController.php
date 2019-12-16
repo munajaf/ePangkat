@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Frontend\User;
 
 use App\Http\Controllers\Controller;
+use App\Models\Request;
 
 /**
  * Class DashboardController.
@@ -14,6 +15,7 @@ class DashboardController extends Controller
      */
     public function index()
     {
-        return view('frontend.user.dashboard');
+        $list = Request::getAllRequest();
+        return view('frontend.user.dashboard', compact('list'));
     }
 }

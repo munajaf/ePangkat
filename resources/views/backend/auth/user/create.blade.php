@@ -49,6 +49,42 @@
                         </div><!--form-group-->
 
                         <div class="form-group row">
+                            {{ html()->label('IC Number')->class('col-md-2 form-control-label')->for('no_ic') }}
+
+                            <div class="col-md-10">
+                                {{ html()->number('no_ic')
+                                    ->class('form-control')
+                                    ->placeholder("IC Number")
+                                    ->attribute('maxlength', 12)
+                                    ->required() }}
+                            </div><!--col-->
+                        </div><!--form-group-->
+
+                        <div class="form-group row">
+                            {{ html()->label('Place Of Birth')->class('col-md-2 form-control-label')->for('place_of_birth') }}
+
+                            <div class="col-md-10">
+                                {{ html()->text('place_of_birth')
+                                    ->class('form-control')
+                                    ->placeholder('Place Of Birth')
+                                    ->attribute('maxlength', 50)
+                                    ->required() }}
+                            </div><!--col-->
+                        </div><!--form-group-->
+
+                        <div class="form-group row">
+                            {{ html()->label('Gender')->class('col-md-2 form-control-label')->for('place_of_birth') }}
+
+                            <div class="col-md-10">
+                                {{ html()->select('gender', ['M' => 'Male', 'F' => 'Female'])
+                                    ->class('form-control')
+                                    ->placeholder('Gender')
+                                    ->attribute('maxlength', 50)
+                                    ->required() }}
+                            </div><!--col-->
+                        </div><!--form-group-->
+
+                        <div class="form-group row">
                             {{ html()->label(__('validation.attributes.backend.access.users.email'))->class('col-md-2 form-control-label')->for('email') }}
 
                             <div class="col-md-10">

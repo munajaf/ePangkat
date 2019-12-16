@@ -128,9 +128,53 @@ return [
     */
 
     'custom' => [
-        'attribute-name' => [
-            'rule-name' => 'custom-message',
+        'kategori1_syarat2_1.attach' => [
+            'min' => 'Tidak memenuhi syarat minima untuk Bilangan PhD',
         ],
+        'kategori1_syarat2_1.*' => [
+            'max' => 'Maximum untuk bilangan PhD Size adalah 2MB sahaja',
+            'mimes' => 'Jenis PDF Sahaja'
+        ],
+        'kategori1_syarat2_2.attach' => [
+            'min' => 'Tidak memenuhi syarat minima untuk Bilangan Sarjana (Penyelidikan)',
+        ],
+        'kategori1_syarat2_2.*' => [
+            'max' => 'Maximum untuk bilangan Sarjana (Penyelidikan) Size adalah 2MB sahaja',
+            'mimes' => 'Jenis PDF Sahaja'
+        ],
+        'kategori1_syarat2_3.attach' => [
+            'min' => 'Tidak memenuhi syarat minima untuk Bilangan Sarjana (Kerja Kursus)',
+        ],
+        'kategori1_syarat2_3.*' => [
+            'max' => 'Maximum untuk bilangan Sarjana (Kerja Kursus) Size adalah 2MB sahaja',
+            'mimes' => 'Jenis PDF Sahaja'
+        ],
+
+        'kategori1_syarat4_1.attach' => [
+            'min' => 'Tidak memenuhi syarat minima Bilangan Buku'
+        ],
+        'kategori1_syarat4_1.attach>*' => [
+            'max' => 'Maximum  untuk bilangan Anugerah Size adalah 2MB sahaja',
+            'mimes' => 'Jenis PDF Sahaja'
+        ],
+        'kategori1_syarat4_2.attach' => [
+            'min' => 'Tidak memenuhi syarat minima Bilangan Buku'
+        ],
+        'kategori1_syarat4_2.attach.*' => [
+            'max' => 'Maximum  untuk Penilaian Pengajaran Size adalah 2MB sahaja',
+            'mimes' => 'Jenis PDF Sahaja'
+        ],
+
+        'kategori2_syarat2.jenis' => [
+            'min' => 'Tidak memenuhi syarat minima untuk Penyelidikan'
+
+        ],
+        'kategori2_syarat2.attach.*' => [
+            'max' => 'Maximum  untuk Penilaian Pengajaran Size adalah 2MB sahaja',
+            'mimes' => 'Jenis PDF Sahaja'
+        ]
+
+
     ],
 
     /*
