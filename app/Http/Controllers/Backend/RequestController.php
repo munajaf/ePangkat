@@ -125,7 +125,7 @@ class RequestController extends Controller
                 'kategori4_syarat2' => $preparedData['kategori4_syarat2'],
             ]);
 
-            $createdRequest->requestMarks()->create(['request_id' => $createdRequest->id]);
+//            $createdRequest->requestMarks()->create(['request_id' => $createdRequest->id]);
 
         }, 3);
 
@@ -147,13 +147,21 @@ class RequestController extends Controller
 
     public function accept($id)
     {
-        $data = Request::where($id)->update(['status' => 'accepted']);
+        $data = Request::where('id', $id)->update(['status' => 'accepted']);
+        $toName = $data->users->full_name;
+        $toEmail = $data->users->email;
+        $data = array("name" => $toName, "body" => "Tahniah Permohonan anda telah diterima!");
+        \Mail::send("backend.mail", $data, function ($message) use ($toName, $toEmail) {
+            $message->to($toEmail, $toName)
+                ->subject("Laravel Test Mail");
+            $message->from("ammarmunajaf@gmail.com", "Test Mail");
+        });
 
     }
 
     public function rejected($id)
     {
-        Request::where($id)->update(['status' => 'rejected']);
+        Request::where('id', $id)->update(['status' => 'rejected']);
     }
 
     /**

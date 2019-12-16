@@ -29,6 +29,8 @@ Route::group(['middleware' => ['auth', 'password_expires']], function () {
         Route::get('request/{id}/makeCreate', 'RequestController@extendCreate')->name('extend.create');
         Route::patch('requests/{id}', 'RequestController@extendCreateUpdate')->name('extend.update');
 
+        Route::get('request/{id}/pdf','RequestController@makePDF')->name('get.pdf');
+
         // User Account Specific
         Route::get('account', [AccountController::class, 'index'])->name('account');
 

@@ -376,6 +376,13 @@ class RequestController extends Controller
 
     }
 
+    public static function makePDF($id)
+    {
+        $data  = Request::getRequest($id);
+
+        $pdf = \PDF::loadView('frontend.result', compact('data'));
+        return $pdf->download('bukti.'.$id.'.pdf');
+    }
 
     protected function prepareData($allData)
     {

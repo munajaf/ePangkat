@@ -52,18 +52,6 @@ class Request extends Model
             ->get();
     }
 
-    public static function makePDF()
-    {
-        $data = [
-            'title' => 'First PDF for Medium',
-            'heading' => 'Hello from 99Points.info',
-            'content' => 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry'
-            ];
-
-        $pdf = \PDF::loadView('pdf_view', $data);
-        return $pdf->download('medium.pdf');
-    }
-
     #todo admin useable
     public static function getRequest($id, $admin = false)
     {
@@ -71,7 +59,6 @@ class Request extends Model
             ->when(!$admin, function ($query) {
                 return $query->where(['user_id' => auth()->user()->id]);
             })
-            ->with('requestMarks')
             ->first();
     }
 
@@ -82,10 +69,7 @@ class Request extends Model
                 return $query->where(['user_id' => auth()->user()->id]);
             })->first();
 
-        $method->update(['status' => $data['status']]);
-        unset($data['status']);
-
-        return $method->requestMarks()->update($data);
+        return $method->update(['status' => $data['status']]);
     }
 
     public static function deleteRequest($id)
