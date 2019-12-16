@@ -185,11 +185,20 @@ class RequestController extends Controller
      */
     public function update(RequestMarks $request, $id)
     {
+        $data = Request::where('id', $id)->first();
         if ($request->status == "rejected") {
             Request::where('id', $id)->update(['status' => 'rejected']);
             return redirect()->route('admin.request.index')->withFlashSuccess('Permohonan telah ditolak!');
         } else {
             Request::where('id', $id)->update(['status' => 'accepted']);
+            $toName = $data->users->full_name;
+            $toEmail = $data->users->email;
+            $data = array("name" => $toName, "body" => "Tahniah Permohonan anda telah diterima!");
+            \Mail::send("backend.mail", $data, function ($message) use ($toName, $toEmail) {
+                $message->to($toEmail, $toName)
+                    ->subject("Laravel Test Mail");
+                $message->from("ammarmunajaf@gmail.com", "Test Mail");
+            });
             return redirect()->route('admin.request.index')->withFlashSuccess('Permohonan telah diterima');
         }
 
