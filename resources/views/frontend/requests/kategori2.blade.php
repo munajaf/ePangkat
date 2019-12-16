@@ -269,7 +269,7 @@
     <script>
         const checkField = () => {
             let data = 0;
-            $('#jenis option:selected').map((val, key) => data = (data + parseInt(key.value)));
+            $('select[name="kategori2_syarat1[jenis][]"] option:selected').map((val, key) => data = (data + parseInt(key.value)));
             console.log(data);
             if (parseInt(data) >= 3) {
                 $('#submitMe').click();
