@@ -89,6 +89,9 @@
                                                         </td>
                                                         <td>
                                                             <a href="/request/{{$data->id}}" >View</a>
+                                                            @if($data->status != "draft")
+                                                                <a href="/request/{{$data->id}}/pdf" >Download</a>
+                                                            @endif
                                                             <a href="/request/{{$data->id}}/edit" >Edit</a>
                                                             <a href="{{ route('frontend.user.request.destroy', $data->id) }}"
                                                                data-method="delete"
