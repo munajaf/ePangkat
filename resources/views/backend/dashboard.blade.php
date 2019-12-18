@@ -13,6 +13,7 @@
                     <table class="table table-striped">
                         <thead>
                         <tr>
+                            <td>Nama</td>
                             <td>Type</td>
                             <td>Date Requested</td>
                             <td>Status</td>
@@ -21,6 +22,7 @@
                         </thead>
                         @foreach($data as $list)
                             <tr>
+                                <td>{{$list->users->full_name}}</td>
                                 <td>{{$list->type}}</td>
                                 <td>{{$list->created_at}}</td>
                                 <td>
