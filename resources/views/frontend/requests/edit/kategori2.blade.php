@@ -183,7 +183,7 @@
         <div class="form-group col-xs-10 col-sm-3 col-md-6 col-lg-5">
             <label>Attachment</label>
             <input class="form-control-file" name="kategori2_syarat3[attach][]"
-                   value="{{$data->kategori2_syarat3[0]['attach']}}" hidden/>
+                   value="{{$data->kategori2_syarat3[0]['attach']}}" hidden id="deleteme1"/>
             <a class="btn btn-primary btn-block" href="/{{$data->kategori2_syarat3[0]['attach']}}" target="_blank" id="derpy1">File</a>
         </div>
         <div class="row col-md-1">
@@ -203,7 +203,7 @@
         <div class="form-group col-xs-10 col-sm-3 col-md-6 col-lg-5">
             <label>Attachment</label>
             <input class="form-control-file" name="kategori2_syarat3[attach][]"
-                   value="{{$data->kategori2_syarat3[1]['attach']}}" hidden/>
+                   value="{{$data->kategori2_syarat3[1]['attach']}}" hidden id="deleteme2"/>
             <a class="btn btn-primary btn-block" href="/{{$data->kategori2_syarat3[1]['attach']}}" target="_blank" id="derpy2">File</a>
         </div>
         <div class="row col-md-1">

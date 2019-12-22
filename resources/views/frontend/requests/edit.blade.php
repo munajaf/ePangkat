@@ -79,8 +79,8 @@
 
         const deleteGeranBukanSainsAttachment = (e, myself) => {
             e.preventDefault();
-            let selectedName = $('input[name="kategori2_syarat3[attach][bukan_sains]"]');
-            selectedName.parent('div').append('<input type="file" name="kategori2_syarat3[attach][bukan_sains]" accept="application/pdf" required/>');
+            let selectedName = $('#deleteme1');
+            selectedName.parent('div').append('<input type="file" name="kategori2_syarat3[attach][0]" accept="application/pdf" required/>');
             selectedName.remove();
             $('#derpy1').remove();
             $(myself).remove();
@@ -88,8 +88,8 @@
 
         const deleteGeranSainsAttachment = (e, myself) => {
             e.preventDefault();
-            let selectedName = $('input[name="kategori2_syarat3[attach][sains]"]');
-            selectedName.parent('div').append('<input type="file" name="kategori2_syarat3[attach][sains]" accept="application/pdf" required/>');
+            let selectedName = $('#deleteme2');
+            selectedName.parent('div').append('<input type="file" name="kategori2_syarat3[attach][1]" accept="application/pdf" required/>');
             selectedName.remove();
             $('#derpy2').remove();
             $(myself).remove();
