@@ -53,10 +53,9 @@
                             onclick="deleteFields(event, this)"><i class="fas fa-trash-alt"></i>
                     </button>
                 </div>
-
             </div>
+        @endforeach
     </div>
-    @endforeach
     <div class="row col-md-12" id="kategori2_syarat1c">
         <div class="form-group col-xs-10 col-sm-3 col-md-3 col-lg-3">
             <label>Tajuk</label>
@@ -187,35 +186,45 @@
 </div>
 <div class="row pb-5">
     <div class="row col-md-11" id="kategori2_syarat3_wrapper">
-            <div class="form-group col-xs-10 col-sm-3 col-md-6 col-lg-6">
-                <label>Jumlah Geran Bukan Sains</label>
-                <input type="text" class="form-control" name="kategori2_syarat3[jumlah_geran][bukan_sains]"
-                       value="{{$data->kategori2_syarat3['bukan_sains']['jumlah_geran']}}"
-                       min="{{($data->type == "DS54" ? 20000:50000)}}"
-                >
-            </div>
+        <div class="form-group col-xs-10 col-sm-3 col-md-6 col-lg-6">
+            <label>Jumlah Geran Bukan Sains</label>
+            <input type="text" class="form-control" name="kategori2_syarat3[jumlah_geran][bukan_sains]"
+                   value="{{$data->kategori2_syarat3['bukan_sains']['jumlah_geran']}}"
+                   min="{{($data->type == "DS54" ? 20000:50000)}}"
+            >
+        </div>
 
-            <div class="form-group col-xs-10 col-sm-3 col-md-6 col-lg-6">
-                <label>Attachment</label>
-                <input class="form-control-file" name="kategori2_syarat3[attach][]"
-                       value="{{$data->kategori2_syarat3['bukan_sains']['attach']}}" hidden/>
-                <a class="btn btn-primary btn-block" href="/{{$data->kategori2_syarat3['bukan_sains']['attach']}}" target="_blank">File</a>
-            </div>
+        <div class="form-group col-xs-10 col-sm-3 col-md-6 col-lg-5">
+            <label>Attachment</label>
+            <input class="form-control-file" name="kategori2_syarat3[attach][bukan_sains]"
+                   value="{{$data->kategori2_syarat3['bukan_sains']['attach']}}" hidden/>
+            <a class="btn btn-primary btn-block" href="/{{$data->kategori2_syarat3['bukan_sains']['attach']}}" target="_blank" id="derpy1">File</a>
+        </div>
+        <div class="row col-md-1">
+            <button class="btn btn-danger btn-sm" style="margin-top: 2px"
+                    onclick="deleteGeranBukanSainsAttachment(event, this)"><i class="fas fa-trash-alt"></i>
+            </button>
+        </div>
 
-            <div class="form-group col-xs-10 col-sm-3 col-md-6 col-lg-6">
-                <label>Jumlah Geran Sains dan Teknologi</label>
-                <input type="text" class="form-control" name="kategori2_syarat3[jumlah_geran][sains]"
-                       value="{{$data->kategori2_syarat3['sains']['jumlah_geran']}}"
-                       min="{{($data->type == "DS54" ? 40000:100000)}}"
-                >
-            </div>
+        <div class="form-group col-xs-10 col-sm-3 col-md-6 col-lg-6">
+            <label>Jumlah Geran Sains dan Teknologi</label>
+            <input type="text" class="form-control" name="kategori2_syarat3[jumlah_geran][sains]"
+                   value="{{$data->kategori2_syarat3['sains']['jumlah_geran']}}"
+                   min="{{($data->type == "DS54" ? 40000:100000)}}"
+            >
+        </div>
 
-            <div class="form-group col-xs-10 col-sm-3 col-md-6 col-lg-6">
-                <label>Attachment</label>
-                <input class="form-control-file" name="kategori2_syarat3['sains'][attach]"
-                       value="{{$data->kategori2_syarat3['sains']['attach']}}" hidden/>
-                <a class="btn btn-primary btn-block" href="/{{$data->kategori2_syarat3['sains']['attach']}}" target="_blank">File</a>
-            </div>
+        <div class="form-group col-xs-10 col-sm-3 col-md-6 col-lg-5">
+            <label>Attachment</label>
+            <input class="form-control-file" name="kategori2_syarat3[attach][sains]"
+                   value="{{$data->kategori2_syarat3['sains']['attach']}}" hidden/>
+            <a class="btn btn-primary btn-block" href="/{{$data->kategori2_syarat3['sains']['attach']}}" target="_blank" id="derpy2">File</a>
+        </div>
+        <div class="row col-md-1">
+            <button class="btn btn-danger btn-sm" style="margin-top: 2px"
+                    onclick="deleteGeranSainsAttachment(event, this)"><i class="fas fa-trash-alt"></i>
+            </button>
+        </div>
     </div>
 </div>
 

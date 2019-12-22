@@ -73,5 +73,24 @@
                 alert('Kriteria untuk Menghasilkan TIGA (3) Modul Pengajaran / bab atau SATU (1) Buku ilmiah dalam bidang berkaitan yang diterbitkan oleh penerbit yang diiktiraf tidak ditepati');
             }
         };
+
+        const deleteGeranBukanSainsAttachment = (e, myself) => {
+            e.preventDefault();
+            let selectedName = $('input[name="kategori2_syarat3[attach][bukan_sains]"]');
+            selectedName.parent('div').append('<input type="file" name="kategori2_syarat3[attach][bukan_sains]" accept="application/pdf" required/>');
+            selectedName.remove();
+            $('#derpy1').remove();
+            $(myself).remove();
+        };
+
+        const deleteGeranSainsAttachment = (e, myself) => {
+            e.preventDefault();
+            let selectedName = $('input[name="kategori2_syarat3[attach][sains]"]');
+            selectedName.parent('div').append('<input type="file" name="kategori2_syarat3[attach][sains]" accept="application/pdf" required/>');
+            selectedName.remove();
+            $('#derpy2').remove();
+            $(myself).remove();
+        };
+
     </script>
 @endsection
