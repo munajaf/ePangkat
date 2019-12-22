@@ -174,7 +174,7 @@
     <div class="row col-md-11" id="kategori2_syarat3_wrapper">
         <div class="form-group col-xs-10 col-sm-3 col-md-6 col-lg-6">
             <label>Jumlah Geran Bukan Sains</label>
-            <input type="text" class="form-control" name="kategori2_syarat3[jumlah_geran][bukan_sains]"
+            <input type="text" class="form-control" name="kategori2_syarat3[jumlah_geran][]"
                    value="{{$data->kategori2_syarat3[0]['jumlah_geran']}}"
                    min="{{($data->type == "DS54" ? 20000:50000)}}"
             >
@@ -182,7 +182,7 @@
 
         <div class="form-group col-xs-10 col-sm-3 col-md-6 col-lg-5">
             <label>Attachment</label>
-            <input class="form-control-file" name="kategori2_syarat3[attach][bukan_sains]"
+            <input class="form-control-file" name="kategori2_syarat3[attach][]"
                    value="{{$data->kategori2_syarat3[0]['attach']}}" hidden/>
             <a class="btn btn-primary btn-block" href="/{{$data->kategori2_syarat3[0]['attach']}}" target="_blank" id="derpy1">File</a>
         </div>
@@ -194,7 +194,7 @@
 
         <div class="form-group col-xs-10 col-sm-3 col-md-6 col-lg-6">
             <label>Jumlah Geran Sains dan Teknologi</label>
-            <input type="text" class="form-control" name="kategori2_syarat3[jumlah_geran][sains]"
+            <input type="text" class="form-control" name="kategori2_syarat3[jumlah_geran][]"
                    value="{{$data->kategori2_syarat3[1]['jumlah_geran']}}"
                    min="{{($data->type == "DS54" ? 40000:100000)}}"
             >
@@ -202,7 +202,7 @@
 
         <div class="form-group col-xs-10 col-sm-3 col-md-6 col-lg-5">
             <label>Attachment</label>
-            <input class="form-control-file" name="kategori2_syarat3[attach][sains]"
+            <input class="form-control-file" name="kategori2_syarat3[attach][]"
                    value="{{$data->kategori2_syarat3[1]['attach']}}" hidden/>
             <a class="btn btn-primary btn-block" href="/{{$data->kategori2_syarat3[1]['attach']}}" target="_blank" id="derpy2">File</a>
         </div>

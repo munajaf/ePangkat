@@ -125,7 +125,7 @@
                     <div class="form-group col-xs-10 col-sm-3 col-md-6 col-lg-6">
                         <label>Jumlah Geran Bukan Sains</label>
                         <input type="number"
-                               name="kategori2_syarat3[jumlah_geran][bukan_sains]"
+                               name="kategori2_syarat3[jumlah_geran][]"
                                class="form-control"
                                min="{{($data->type == "DS54" ? 20000:50000)}}"
                         >
@@ -133,7 +133,7 @@
 
                     <div class="form-group col-xs-10 col-sm-3 col-md-6 col-lg-6">
                         <label>Attachment</label>
-                        <input type="file" required name="kategori2_syarat3[attach][bukan_sains]"
+                        <input type="file" required name="kategori2_syarat3[attach][]"
                                accept="application/pdf" multiple/>
                     </div>
                 </div>
@@ -141,7 +141,7 @@
                     <div class="form-group col-xs-10 col-sm-3 col-md-6 col-lg-6">
                         <label>Jumlah Geran Sains dan Teknologi</label>
                         <input type="number"
-                               name="kategori2_syarat3[jumlah_geran][sains]"
+                               name="kategori2_syarat3[jumlah_geran][]"
                                class="form-control"
                                min="{{($data->type == "DS54" ? 40000:100000)}}"
                         >
@@ -149,7 +149,7 @@
 
                     <div class="form-group col-xs-10 col-sm-3 col-md-6 col-lg-6">
                         <label>Attachment</label>
-                        <input type="file" required name="kategori2_syarat3[attach][sains]"
+                        <input type="file" required name="kategori2_syarat3[attach][]"
                                accept="application/pdf" multiple/>
                     </div>
                 </div>
