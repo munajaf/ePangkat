@@ -2,32 +2,38 @@
 <small>Memenuhi BTA pengajaran untuk TIGA (3) tahun (berdasarkan polisi Universiti)</small>
 <div class="row pb-5">
     <div class="form-group col-xs-10 col-sm-3 col-md-3 col-lg-4 row">
-        <div class="row col-md-11 mb-2">
-            <input class="form-control-file" name="kategori1_syarat1_1" value="{{$data->kategori1_syarat1[0]}}" hidden/>
-            <a class="btn btn-primary btn-block" href="/{{$data->kategori1_syarat1[0]}}" target="_blank">Tahun 1 Attachment</a>
-        </div>
-        <div class="row col-md-1 ml-0 mb-2">
-            <button class="btn btn-danger btn-sm" style="margin-top: 2px" onclick="deleteFields(event, this, 'kategori1_syarat1_1')"><i class="fas fa-trash-alt"></i></button>
+        <div class="row col-md-12">
+            <div class="row col-md-11 mb-2">
+                <input class="form-control-file" name="kategori1_syarat1_1" value="{{$data->kategori1_syarat1[0]}}" hidden/>
+                <a class="btn btn-primary btn-block" href="/{{$data->kategori1_syarat1[0]}}" target="_blank">Tahun 1 Attachment</a>
+            </div>
+            <div class="row col-md-1 ml-0 mb-2">
+                <button class="btn btn-danger btn-sm" style="margin-top: 2px" onclick="deleteFields2(event, this, 'kategori1_syarat1_1')"><i class="fas fa-trash-alt"></i></button>
+            </div>
         </div>
         <input type="file" id="kategori1_syarat1_1" name="kategori1_syarat1_1" accept="application/pdf"/>
     </div>
     <div class="form-group col-xs-10 col-sm-3 col-md-3 col-lg-4 row">
-        <div class="col-md-11 row mb-2">
-            <input class="form-control-file" name="kategori1_syarat1_2" value="{{$data->kategori1_syarat1[1]}}" hidden/>
-            <a class="btn btn-primary btn-block" href="/{{$data->kategori1_syarat1[1]}}" target="_blank">Tahun 2 Attachment</a>
-        </div>
-        <div class="col-md-1 row ml-0 mb-2">
-            <button class="btn btn-danger btn-sm" style="margin-top: 2px" onclick="deleteFields(event, this, 'kategori1_syarat1_2')"><i class="fas fa-trash-alt"></i></button>
+        <div class="row col-md-12">
+            <div class="col-md-11 row mb-2">
+                <input class="form-control-file" name="kategori1_syarat1_2" value="{{$data->kategori1_syarat1[1]}}" hidden/>
+                <a class="btn btn-primary btn-block" href="/{{$data->kategori1_syarat1[1]}}" target="_blank">Tahun 2 Attachment</a>
+            </div>
+            <div class="col-md-1 row ml-0 mb-2">
+                <button class="btn btn-danger btn-sm" style="margin-top: 2px" onclick="deleteFields2(event, this, 'kategori1_syarat1_2')"><i class="fas fa-trash-alt"></i></button>
+            </div>
         </div>
         <input type="file" id="kategori1_syarat1_2" name="kategori1_syarat1_2" accept="application/pdf"/>
     </div>
     <div class="form-group col-xs-10 col-sm-10 col-md-3 col-lg-4 row">
-        <div class="col-md-11 row mb-2">
-            <input class="form-control-file" name="kategori1_syarat1_3" value="{{$data->kategori1_syarat1[2]}}" hidden/>
-            <a class="btn btn-primary btn-block" href="/{{$data->kategori1_syarat1[2]}}" target="_blank">Tahun 3 Attachment</a>
-        </div>
-        <div class="col-md-1 row ml-0 mb-2">
-            <button class="btn btn-danger btn-sm" style="margin-top: 2px" onclick="deleteFields(event, this, 'kategori1_syarat1_3')"><i class="fas fa-trash-alt"></i></button>
+        <div class="row col-md-12">
+            <div class="col-md-11 row mb-2">
+                <input class="form-control-file" name="kategori1_syarat1_3" value="{{$data->kategori1_syarat1[2]}}" hidden/>
+                <a class="btn btn-primary btn-block" href="/{{$data->kategori1_syarat1[2]}}" target="_blank">Tahun 3 Attachment</a>
+            </div>
+            <div class="col-md-1 row ml-0 mb-2">
+                <button class="btn btn-danger btn-sm" style="margin-top: 2px" onclick="deleteFields2(event, this, 'kategori1_syarat1_3')"><i class="fas fa-trash-alt"></i></button>
+            </div>
         </div>
         <input type="file" id="kategori1_syarat1_3" name="kategori1_syarat1_3" accept="application/pdf"/>
     </div>
@@ -90,7 +96,7 @@
                     <a class="btn btn-primary btn-block" href="/{{$list['attach']}}" target="_blank">Attachment {{$key + 1}}</a>
                 </div>
                 <div class="col-md-1 row ml-0">
-                    <button class="btn btn-danger btn-sm" style="margin-top: 2px" onclick="deleteFields(event, this)"><i class="fas fa-trash-alt"></i></button>
+                    <button class="btn btn-danger btn-sm" style="margin-top: 2px" onclick="deleteFields2(event, this)"><i class="fas fa-trash-alt"></i></button>
                 </div>
             </div>
         @endforeach
@@ -114,7 +120,7 @@
                     <a class="btn btn-primary btn-block" href="/{{$list['attach']}}" target="_blank">Attachment {{$key + 1}}</a>
                 </div>
                 <div class="col-md-1 row ml-0">
-                    <button class="btn btn-danger btn-sm" style="margin-top: 2px" onclick="deleteFields(event, this)"><i class="fas fa-trash-alt"></i></button>
+                    <button class="btn btn-danger btn-sm" style="margin-top: 2px" onclick="deleteFields2(event, this)"><i class="fas fa-trash-alt"></i></button>
                 </div>
             </div>
 
@@ -154,7 +160,7 @@
                                     <a class="btn btn-primary" href="/{{$list}}" target="_blank">Attachment {{$i++}}</a>
                                 </div>
                                 <div class="row col-md-1 ml-0">
-                                    <button class="btn btn-danger btn-sm" style="margin-top: 2px" onclick="deleteFields(event, this)"><i class="fas fa-trash-alt"></i></button>
+                                    <button class="btn btn-danger btn-sm" style="margin-top: 2px" onclick="deleteFields2(event, this)"><i class="fas fa-trash-alt"></i></button>
                                 </div>
                             </div>
                         @endforeach
@@ -200,7 +206,7 @@
                                     <a class="btn btn-primary btn-block" href="/{{$list['attach']}}" target="_blank">Attachment {{$key + 1}}</a>
                                 </div>
                                 <div class="col-md-1 row ml-0">
-                                    <button class="btn btn-danger btn-sm" style="margin-top: 2px" onclick="deleteFields(event, this)"><i class="fas fa-trash-alt"></i></button>
+                                    <button class="btn btn-danger btn-sm" style="margin-top: 2px" onclick="deleteFields2(event, this)"><i class="fas fa-trash-alt"></i></button>
                                 </div>
                             </div>
                         @endforeach
@@ -225,7 +231,7 @@
                                     <a class="btn btn-primary btn-block" href="/{{$list['attach']}}" target="_blank">Attachment {{$key + 1}}</a>
                                 </div>
                                 <div class="col-md-1 row ml-0">
-                                    <button class="btn btn-danger btn-sm" style="margin-top: 2px" onclick="deleteFields(event, this)"><i class="fas fa-trash-alt"></i></button>
+                                    <button class="btn btn-danger btn-sm" style="margin-top: 2px" onclick="deleteFields2(event, this)"><i class="fas fa-trash-alt"></i></button>
                                 </div>
                             </div>
                         @endforeach

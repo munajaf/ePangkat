@@ -50,7 +50,7 @@
                 </div>
                 <div class="col-md-1 row ml-0">
                     <button class="btn btn-danger btn-sm" style="margin-top: 2px"
-                            onclick="deleteFields(event, this)"><i class="fas fa-trash-alt"></i>
+                            onclick="deleteFields2(event, this)"><i class="fas fa-trash-alt"></i>
                     </button>
                 </div>
             </div>
@@ -134,7 +134,7 @@
                 </div>
                 <div class="col-md-1 row ml-0">
                     <button class="btn btn-danger btn-sm" style="margin-top: 2px"
-                            onclick="deleteFields(event, this)"><i class="fas fa-trash-alt"></i>
+                            onclick="deleteFields2(event, this)"><i class="fas fa-trash-alt"></i>
                     </button>
                 </div>
             </div>

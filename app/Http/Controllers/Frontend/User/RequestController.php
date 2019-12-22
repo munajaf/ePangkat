@@ -457,7 +457,7 @@ class RequestController extends Controller
         }
 
         if (!$testPassed) {
-            return redirect()->route('frontend.user.request.edit', [$id])->withFlashSuccess('Tidak mempunyai minima data');
+            return redirect()->route('frontend.user.request.edit', [$id])->withFlashDanger('Tidak mempunyai minima data');
         }
 
         Request::where('id', $id)->update([
