@@ -1,7 +1,13 @@
 <h1>Kepimpinan dan Pengurusan</h1>
 <div class="row">
-    <small>Menjadi Ahli Badan Profesional yang diiktiraf / Sub kepakaran</small>
-</div>
+    @if($data->type == "DS54")
+        <small>Menjadi Ahli Badan Profesional yang diiktiraf / Sub kepakaran</small>
+
+    @else
+        <small>
+            Menjadi Ahli Badan Profesional / Pertubuhan Akademik yang diiktiraf
+        </small>
+    @endif</div>
 <div class="row pb-5">
     <div class="row col-md-11" id="kategori4_syarat1_wrapper">
         @foreach($data->kategori4_syarat1 as $key => $list)
@@ -42,10 +48,18 @@
 </div>
 
 <div class="row">
-    <small>SATU (1) Keahlian jawatankuasa di peringkat kebangsaan atau antarabangsa (Di luar
-        tugas
-        rasmi)
-    </small>
+    @if($data->type == "DS54")
+        <small>SATU (1) Keahlian jawatankuasa di peringkat kebangsaan atau antarabangsa (Di luar
+            tugas
+            rasmi)
+        </small>
+
+    @else
+        <small>
+            DUA (2) Keahlian jawatankuasa di peringkat kebangsaan dan antarabangsa (Di luar tugas rasmi)
+
+        </small>
+    @endif
 </div>
 <div class="row pb-5">
     <div class="row col-md-11" id="kategori4_syarat2_wrapper">

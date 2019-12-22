@@ -1,9 +1,16 @@
 <h1>Penyelidikan dan Penerbitan</h1>
 <div class="row">
-    <small>
-        Menghasilkan TIGA (3) Modul Pengajaran / bab atau SATU (1) Buku ilmiah dalam bidang
-        berkaitan yang diterbitkan oleh penerbit yang diiktiraf
-    </small>
+    @if($data->type == "DS54")
+        <small>
+            Menghasilkan TIGA (3) Modul Pengajaran / bab atau SATU (1) Buku ilmiah dalam bidang
+            berkaitan yang diterbitkan oleh penerbit yang diiktiraf
+        </small>
+    @else
+        <small>
+            Menghasilkan ENAM (6) Modul Pengajaran atau DUA (2) Buku ilmiah dalam bidang berkaitan yang
+            diterbitkan oleh penerbit yang diiktiraf
+        </small>
+    @endif
 </div>
 <div class="row pb-5">
     <div class="row col-md-11" id="kategori2_syarat1_wrapper">
@@ -81,10 +88,20 @@
 </button>
 
 <div class="row">
-    <small>
-        Minimum DUA (2) Penyelidikan (Sekurang-kurangnya SATU (1) sebagai Ketua Penyelidik) atau
-        SATU (1) harta intelek (IP) (Kumulatif)
-    </small>
+    @if($data->type == "DS54")
+        <small>
+            Minimum DUA (2) Penyelidikan (Sekurang-kurangnya SATU (1) sebagai Ketua Penyelidik)
+            atau
+            SATU (1) harta intelek (IP) (Kumulatif)
+        </small>
+    @else
+        <small>
+            Minimum LIMA (5) Penyelidikan (Sekurang-kurangnya DUA (2) Ketua Penyelidik) atau harta intelek (IP)
+            (Kumulatif)
+
+            Dua (2) Penyelidikan = Satu (1) harta intelek
+        </small>
+    @endif
 </div>
 <div class="row pb-5">
     <div class="row col-md-11" id="kategori2_syarat2_wrapper">
@@ -151,45 +168,79 @@
 </div>
 
 <div class="row">
-    <small>
-        Geran Penyelidikan minimum (Kumulatif):
-        Bukan Sains- RM20,000.00
-        Sains dan Teknologi- RM40,000.00
-    </small>
+    @if($data->type == "DS54")
+        <small>
+            Geran Penyelidikan minimum (Kumulatif):
+            Bukan Sains- RM20,000.00
+            Sains dan Teknologi- RM40,000.00
+        </small>
+    @else
+        <small>
+            Geran Penyelidikan minimum (Kumulatif):
+
+            Bukan Sains - RM50,000.00
+            Sains dan Teknologi - RM100,000.00
+
+
+        </small>
+    @endif
 </div>
 <div class="row pb-5">
     <div class="row col-md-11" id="kategori2_syarat3_wrapper">
-        @foreach($data->kategori2_syarat3 as $key => $list)
             <div class="form-group col-xs-10 col-sm-3 col-md-6 col-lg-6">
-                @if($key == 0)
-                    <label>Jumlah Geran</label>
-                @endif
-                <input type="text" class="form-control" name="kategori2_syarat3[jumlah_geran][]"
-                       value="{{$list['jumlah_geran']}}">
+                <label>Jumlah Geran Bukan Sains</label>
+                <input type="text" class="form-control" name="kategori2_syarat3[jumlah_geran][bukan_sains]"
+                       value="{{$data->kategori2_syarat3['bukan_sains']['jumlah_geran']}}"
+                       min="{{($data->type == "DS54" ? 20000:50000)}}"
+                >
             </div>
 
             <div class="form-group col-xs-10 col-sm-3 col-md-6 col-lg-6">
-                @if($key == 0)
-                    <label>Attachment</label>
-                @endif
+                <label>Attachment</label>
                 <input class="form-control-file" name="kategori2_syarat3[attach][]"
-                       value="{{$list['attach']}}" hidden/>
-                <a class="btn btn-primary btn-block" href="/{{$list['attach']}}" target="_blank">File</a>
+                       value="{{$data->kategori2_syarat3['bukan_sains']['attach']}}" hidden/>
+                <a class="btn btn-primary btn-block" href="/{{$data->kategori2_syarat3['bukan_sains']['attach']}}" target="_blank">File</a>
             </div>
-        @endforeach
+
+            <div class="form-group col-xs-10 col-sm-3 col-md-6 col-lg-6">
+                <label>Jumlah Geran Sains dan Teknologi</label>
+                <input type="text" class="form-control" name="kategori2_syarat3[jumlah_geran][sains]"
+                       value="{{$data->kategori2_syarat3['sains']['jumlah_geran']}}"
+                       min="{{($data->type == "DS54" ? 40000:100000)}}"
+                >
+            </div>
+
+            <div class="form-group col-xs-10 col-sm-3 col-md-6 col-lg-6">
+                <label>Attachment</label>
+                <input class="form-control-file" name="kategori2_syarat3['sains'][attach]"
+                       value="{{$data->kategori2_syarat3['sains']['attach']}}" hidden/>
+                <a class="btn btn-primary btn-block" href="/{{$data->kategori2_syarat3['sains']['attach']}}" target="_blank">File</a>
+            </div>
     </div>
 </div>
 
 
 <div class="row">
-    <small>
-        Minimum TUJUH (7) penerbitan majalah berindeks google / Scopus / Jurnal Zulfakar,
-        Prosiding
-        yang
-        berindeks, Kertas Polisi
+    @if($data->type == "DS54")
+        <small>
+            Minimum TUJUH (7) penerbitan majalah berindeks google / Scopus / Jurnal Zulfakar,
+            Prosiding
+            yang
+            berindeks, Kertas Polisi
 
-        (Tiga (3) Prosiding = Dua (2) Penerbitan)
-    </small>
+            (Tiga (3) Prosiding = Dua (2) Penerbitan)
+        </small>
+    @else
+        <small>
+            Minimum penerbitan LIMA BELAS (15) majalah berindeks Google / Scopus / Jurnal Zulfakar, Prosiding
+            yang
+            berindeks dan Kertas Polisi
+
+            (TIGA (3) jurnal hendaklah dalam jurnal ISI / Scopus sebagai Penulis Utama)
+        </small>
+
+
+    @endif
 </div>
 <div class="row pb-5">
     <div class="row col-md-11" id="kategori2_syarat4_wrapper">
@@ -261,10 +312,18 @@
 </div>
 
 <div class="row">
-    <small>
-        Menjadi Pengerusi / Ahli jawatankuasa dalam penubuhan program atau silibus baharu atau
-        semakan kurikulum
-    </small>
+    @if($data->type == "DS54")
+        <small>
+            Menjadi Pengerusi / Ahli jawatankuasa dalam penubuhan program atau silibus baharu
+            atau
+            semakan kurikulum
+        </small>
+    @else
+        <small>
+            TIGA (3) Pengerusi / Ahli jawatankuasa dalam penubuhan program atau silibus baharu atau semakan
+            kurikulum
+        </small>
+    @endif
 </div>
 <div class="row pb-5">
     <div class="row col-md-11" id="kategori2_syarat5_wrapper">

@@ -63,7 +63,6 @@
                     Dua (2) Penyelidikan = Satu (1) harta intelek
                 </small>
             @endif
-
         </div>
         <div class="row pb-5">
             <?php ($data->type == "DS54") ? $limit = 2 : $limit = 5 ?>

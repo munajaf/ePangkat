@@ -25,26 +25,33 @@
                             <small>Memenuhi BTA pengajaran untuk TIGA (3) tahun (berdasarkan polisi Universiti)</small>
                             <div class="row pb-5">
                                 <div class="form-group col-xs-10 col-sm-3 col-md-3 col-lg-43">
-{{--                                    <label for="exampleInputEmail1">Tahun 1</label>--}}
                                     <a class="btn btn-primary btn-block" href="/{{$data->kategori1_syarat1[0]}}" target="_blank">Tahun 1 Attachment</a>
                                 </div>
                                 <div class="form-group col-xs-10 col-sm-3 col-md-3 col-lg-3">
-{{--                                    <label for="exampleInputEmail1">Tahun 2</label>--}}
                                     <a class="btn btn-primary btn-block" href="/{{$data->kategori1_syarat1[1]}}" target="_blank">Tahun 2 Attachment</a>
                                 </div>
                                 <div class="form-group col-xs-10 col-sm-10 col-md-3 col-lg-3">
-{{--                                    <label for="exampleInputFile">Tahun 2</label>--}}
                                     <a class="btn btn-primary btn-block" href="/{{$data->kategori1_syarat1[2]}}" target="_blank">Tahun 3 Attachment</a>
                                 </div>
                             </div>
 
-                            <small>
-                                Menghasilkan TIGA (3) Graduan Sarjana (Penyelidikan) atau SEMBILAN (9) Sarjana (Kerja
-                                Kursus) di UPNM dan telah disahkan oleh Senat.
-                                * Sekurang kurangnya sebagai SATU (1) Penyelia Utama di peringkat (Sarjana)
-                                (Penyelidikan)
-                                atau TIGA (3) (Sarjana) (Kerja Kursus)
-                            </small>
+                            @if($data->type == "DS54")
+                                <small>
+                                    Menghasilkan TIGA (3) Graduan Sarjana (Penyelidikan) atau SEMBILAN (9) Sarjana (Kerja
+                                    Kursus) di UPNM dan telah disahkan oleh Senat.
+                                    * Sekurang kurangnya sebagai SATU (1) Penyelia Utama di peringkat (Sarjana)
+                                    (Penyelidikan)
+                                    atau TIGA (3) (Sarjana) (Kerja Kursus)
+                                </small>
+                            @else
+                                <small>
+                                    Menghasilkan graduan SATU (1) PhD dan DUA (2) Sarjana (Penyelidikan) di UPNM sebagai Penyelia Utama
+                                    serta telah disahkan oleh Senat
+
+                                    (SATU (1) PhD = TIGA (3) Sarjana (Penyelidikan)
+
+                                </small>
+                            @endif
                             <div class="row pb-5">
                                 <div class="form-group col-xs-12 col-sm-4 col-md-4 col-lg-4">
                                     <div id="kategori1_syarat2_1_wrapper">
@@ -142,10 +149,17 @@
                         <div class="container">
                             <h1>Penyelidikan dan Penerbitan</h1>
                             <div class="row">
-                                <small>
-                                    Menghasilkan TIGA (3) Modul Pengajaran / bab atau SATU (1) Buku ilmiah dalam bidang
-                                    berkaitan yang diterbitkan oleh penerbit yang diiktiraf
-                                </small>
+                                @if($data->type == "DS54")
+                                    <small>
+                                        Menghasilkan TIGA (3) Modul Pengajaran / bab atau SATU (1) Buku ilmiah dalam bidang
+                                        berkaitan yang diterbitkan oleh penerbit yang diiktiraf
+                                    </small>
+                                @else
+                                    <small>
+                                        Menghasilkan ENAM (6) Modul Pengajaran atau DUA (2) Buku ilmiah dalam bidang berkaitan yang
+                                        diterbitkan oleh penerbit yang diiktiraf
+                                    </small>
+                                @endif
                             </div>
                             <div class="row pb-5">
                                 <div class="row col-md-11" id="kategori2_syarat1_wrapper">
@@ -177,17 +191,27 @@
                                         @endif
                                         <a class="btn btn-primary btn-block" href="/{{$list['attach']}}" target="_blank">File {{$key + 1}}</a>
                                     </div>
+                                    @endforeach
                                 </div>
-                                @endforeach
                                 <div class="row col-md-1">
                                 </div>
                             </div>
 
                             <div class="row">
-                                <small>
-                                    Minimum DUA (2) Penyelidikan (Sekurang-kurangnya SATU (1) sebagai Ketua Penyelidik) atau
-                                    SATU (1) harta intelek (IP) (Kumulatif)
-                                </small>
+                                @if($data->type == "DS54")
+                                    <small>
+                                        Minimum DUA (2) Penyelidikan (Sekurang-kurangnya SATU (1) sebagai Ketua Penyelidik)
+                                        atau
+                                        SATU (1) harta intelek (IP) (Kumulatif)
+                                    </small>
+                                @else
+                                    <small>
+                                        Minimum LIMA (5) Penyelidikan (Sekurang-kurangnya DUA (2) Ketua Penyelidik) atau harta intelek (IP)
+                                        (Kumulatif)
+
+                                        Dua (2) Penyelidikan = Satu (1) harta intelek
+                                    </small>
+                                @endif
                             </div>
                             <div class="row pb-5">
                                 <div class="row col-md-11" id="kategori2_syarat2_wrapper">
@@ -220,11 +244,22 @@
                             </div>
 
                             <div class="row">
-                                <small>
-                                    Geran Penyelidikan minimum (Kumulatif):
-                                    Bukan Sains- RM20,000.00
-                                    Sains dan Teknologi- RM40,000.00
-                                </small>
+                                @if($data->type == "DS54")
+                                    <small>
+                                        Geran Penyelidikan minimum (Kumulatif):
+                                        Bukan Sains- RM20,000.00
+                                        Sains dan Teknologi- RM40,000.00
+                                    </small>
+                                @else
+                                    <small>
+                                        Geran Penyelidikan minimum (Kumulatif):
+
+                                        Bukan Sains - RM50,000.00
+                                        Sains dan Teknologi - RM100,000.00
+
+
+                                    </small>
+                                @endif
                             </div>
                             <div class="row pb-5">
                                 <div class="row col-md-11" id="kategori2_syarat3_wrapper">
@@ -250,14 +285,24 @@
 
 
                             <div class="row">
-                                <small>
-                                    Minimum TUJUH (7) penerbitan majalah berindeks google / Scopus / Jurnal Zulfakar,
-                                    Prosiding
-                                    yang
-                                    berindeks, Kertas Polisi
+                                @if($data->type == "DS54")
+                                    <small>
+                                        Minimum TUJUH (7) penerbitan majalah berindeks google / Scopus / Jurnal Zulfakar,
+                                        Prosiding
+                                        yang
+                                        berindeks, Kertas Polisi
 
-                                    (Tiga (3) Prosiding = Dua (2) Penerbitan)
-                                </small>
+                                        (Tiga (3) Prosiding = Dua (2) Penerbitan)
+                                    </small>
+                                @else
+                                    <small>
+                                        Minimum penerbitan LIMA BELAS (15) majalah berindeks Google / Scopus / Jurnal Zulfakar, Prosiding
+                                        yang
+                                        berindeks dan Kertas Polisi
+
+                                        (TIGA (3) jurnal hendaklah dalam jurnal ISI / Scopus sebagai Penulis Utama)
+                                    </small>
+                                @endif
                             </div>
                             <div class="row pb-5">
                                 <div class="row col-md-11" id="kategori2_syarat4_wrapper">
@@ -293,10 +338,18 @@
                             </div>
 
                             <div class="row">
-                                <small>
-                                    Menjadi Pengerusi / Ahli jawatankuasa dalam penubuhan program atau silibus baharu atau
-                                    semakan kurikulum
-                                </small>
+                                @if($data->type == "DS54")
+                                    <small>
+                                        Menjadi Pengerusi / Ahli jawatankuasa dalam penubuhan program atau silibus baharu
+                                        atau
+                                        semakan kurikulum
+                                    </small>
+                                @else
+                                    <small>
+                                        TIGA (3) Pengerusi / Ahli jawatankuasa dalam penubuhan program atau silibus baharu atau semakan
+                                        kurikulum
+                                    </small>
+                                @endif
                             </div>
                             <div class="row pb-5">
                                 <div class="row col-md-11" id="kategori2_syarat5_wrapper">
@@ -327,7 +380,11 @@
                             <h1>Perkhidmatan dan Rundingan</h1>
 
                             <div class="row">
-                                <small>DUA (2) Projek Rundingan atau Editor atau Penilai (Dalam atau luar UPNM)</small>
+                                @if($data->type == "DS54")
+                                    <small>DUA (2) Projek Rundingan atau Editor atau Penilai (Dalam atau luar UPNM)</small>
+                                @else
+                                    <small>TIGA (3) Projek Rundingan atau Editor/Penilai (Di dalam atau luar UPNM) </small>
+                                @endif
                             </div>
                             <div class="row pb-5">
                                 <div class="row col-md-11" id="kategori3_syarat1_wrapper">
@@ -360,7 +417,11 @@
                             </div>
 
                             <div class="row">
-                                <small>SATU (1) Invited Speaker peringkat kebangsaan</small>
+                                @if($data->type == "DS54")
+                                    <small>SATU (1) Invited Speaker peringkat kebangsaan</small>
+                                @else
+                                    <small>SATU (1) keynote speaker atau Invited Speaker peringkat antarabangsa</small>
+                                @endif
                             </div>
                             <div class="row pb-5">
                                 <div class="row col-md-11" id="kategori3_syarat2_wrapper">
@@ -381,7 +442,14 @@
                         <div class="container">
                             <h1>Kepimpinan dan Pengurusan</h1>
                             <div class="row">
-                                <small>Menjadi Ahli Badan Profesional yang diiktiraf / Sub kepakaran</small>
+                                @if($data->type == "DS54")
+                                    <small>Menjadi Ahli Badan Profesional yang diiktiraf / Sub kepakaran</small>
+
+                                @else
+                                    <small>
+                                        Menjadi Ahli Badan Profesional / Pertubuhan Akademik yang diiktiraf
+                                    </small>
+                                @endif
                             </div>
                             <div class="row pb-5">
                                 <div class="row col-md-11" id="kategori4_syarat1_wrapper">
@@ -406,10 +474,18 @@
                             </div>
 
                             <div class="row">
-                                <small>SATU (1) Keahlian jawatankuasa di peringkat kebangsaan atau antarabangsa (Di luar
-                                    tugas
-                                    rasmi)
-                                </small>
+                                @if($data->type == "DS54")
+                                    <small>SATU (1) Keahlian jawatankuasa di peringkat kebangsaan atau antarabangsa (Di luar
+                                        tugas
+                                        rasmi)
+                                    </small>
+
+                                @else
+                                    <small>
+                                        DUA (2) Keahlian jawatankuasa di peringkat kebangsaan dan antarabangsa (Di luar tugas rasmi)
+
+                                    </small>
+                                @endif
                             </div>
                             <div class="row pb-5">
                                 <div class="row col-md-11" id="kategori4_syarat2_wrapper">
@@ -440,11 +516,9 @@
                                 <div class="row col-md-1">
                                 </div>
                             </div>
-
                         </div> <!-- card-body -->
                     </div><!-- card -->
                 </div><!-- row -->
             </div>
-        </div>
     <!-- Laravel Javascript Validation -->
 @endsection

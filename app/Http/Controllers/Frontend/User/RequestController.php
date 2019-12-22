@@ -363,7 +363,6 @@ class RequestController extends Controller
                 $testPassed = false;
             }
 
-
             $kategori2Marks = 0;
             foreach ($preparedData['kategori2_syarat1'] as $kategori2) {
                 $kategori2Marks += (int)$kategori2['jenis'];
@@ -377,15 +376,84 @@ class RequestController extends Controller
             }
 
             if (count($preparedData['kategori2_syarat4']) < 15) {
-
+                $testPassed = false;
             }
 
+            if (count($preparedData['kategori2_syarat5']) < 3) {
+                $testPassed = false;
+            }
 
+            if (count($preparedData['kategori3_syarat1']) < 3) {
+                $testPassed = false;
+            }
 
+            if (count($preparedData['kategori3_syarat2']) < 1) {
+                $testPassed = false;
+            }
 
+            if (count($preparedData['kategori4_syarat1']) < 1) {
+                $testPassed = false;
+            }
 
+            if (count($preparedData['kategori4_syarat2']) < 2) {
+                $testPassed = false;
+            }
         } else {
+            if (count($preparedDetachedParams['syarat1']) != 3) {
+                $testPassed = false;
+            }
+            if (count($preparedData['kategori1_syarat2_1']) < 1) {
+                if (count($preparedData['kategori1_syarat2_2']) < 1) {
+                    $testPassed = false;
+                }
+                if (count($preparedData['kategori1_syarat2_3']) < 3) {
+                    $testPassed = false;
+                }
+            }
 
+            if (count($preparedData['kategori1_syarat3_1']) < 1) {
+                $testPassed = false;
+            }
+
+            if (count($syarat4) < 2) {
+                $testPassed = false;
+            }
+
+            $kategori2Marks = 0;
+            foreach ($preparedData['kategori2_syarat1'] as $kategori2) {
+                $kategori2Marks += (int)$kategori2['jenis'];
+            }
+            if ($kategori2Marks < 3) {
+                $testPassed = false;
+            }
+
+            if (count($preparedData['kategori2_syarat2']) < 2) {
+                $testPassed = false;
+            }
+
+            if (count($preparedData['kategori2_syarat4']) < 7) {
+                $testPassed = false;
+            }
+
+            if (count($preparedData['kategori2_syarat5']) < 1) {
+                $testPassed = false;
+            }
+
+            if (count($preparedData['kategori3_syarat1']) < 2) {
+                $testPassed = false;
+            }
+
+            if (count($preparedData['kategori3_syarat2']) < 1) {
+                $testPassed = false;
+            }
+
+            if (count($preparedData['kategori4_syarat1']) < 1) {
+                $testPassed = false;
+            }
+
+            if (count($preparedData['kategori4_syarat2']) < 1) {
+                $testPassed = false;
+            }
         }
 
         if (!$testPassed) {

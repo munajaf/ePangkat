@@ -33,13 +33,23 @@
     </div>
 </div>
 
-<small>
-    Menghasilkan TIGA (3) Graduan Sarjana (Penyelidikan) atau SEMBILAN (9) Sarjana (Kerja
-    Kursus) di UPNM dan telah disahkan oleh Senat.
-    * Sekurang kurangnya sebagai SATU (1) Penyelia Utama di peringkat (Sarjana)
-    (Penyelidikan)
-    atau TIGA (3) (Sarjana) (Kerja Kursus)
-</small>
+@if($data->type == "DS54")
+    <small>
+        Menghasilkan TIGA (3) Graduan Sarjana (Penyelidikan) atau SEMBILAN (9) Sarjana (Kerja
+        Kursus) di UPNM dan telah disahkan oleh Senat.
+        * Sekurang kurangnya sebagai SATU (1) Penyelia Utama di peringkat (Sarjana)
+        (Penyelidikan)
+        atau TIGA (3) (Sarjana) (Kerja Kursus)
+    </small>
+@else
+    <small>
+        Menghasilkan graduan SATU (1) PhD dan DUA (2) Sarjana (Penyelidikan) di UPNM sebagai Penyelia Utama
+        serta telah disahkan oleh Senat
+
+        (SATU (1) PhD = TIGA (3) Sarjana (Penyelidikan)
+
+    </small>
+@endif
 <div class="row pb-5">
     <div class="form-group col-xs-12 col-sm-4 col-md-4 col-lg-4">
         <div id="">

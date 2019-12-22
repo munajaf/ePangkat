@@ -1,8 +1,11 @@
 <h1>Perkhidmatan dan Rundingan</h1>
 
 <div class="row">
-    <small>DUA (2) Projek Rundingan atau Editor atau Penilai (Dalam atau luar UPNM)</small>
-</div>
+    @if($data->type == "DS54")
+        <small>DUA (2) Projek Rundingan atau Editor atau Penilai (Dalam atau luar UPNM)</small>
+    @else
+        <small>TIGA (3) Projek Rundingan atau Editor/Penilai (Di dalam atau luar UPNM) </small>
+    @endif</div>
 <div class="row pb-5">
     <div class="row col-md-11" id="kategori3_syarat1_wrapper">
         @foreach($data->kategori3_syarat1 as $key => $list)
@@ -61,7 +64,11 @@
 </div>
 
 <div class="row">
-    <small>SATU (1) Invited Speaker peringkat kebangsaan</small>
+    @if($data->type == "DS54")
+        <small>SATU (1) Invited Speaker peringkat kebangsaan</small>
+    @else
+        <small>SATU (1) keynote speaker atau Invited Speaker peringkat antarabangsa</small>
+    @endif
 </div>
 <div class="row pb-5">
     <div class="row col-md-11" id="kategori3_syarat2_wrapper">
