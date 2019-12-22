@@ -65,7 +65,7 @@
                     @foreach($data->kategori1_syarat2[0] as $key => $list)
                         <div class="row col-md-12 row">
                             <div class="row col-md-11 mb-2">
-                                <input class="form-control-file" name="kategori1_syarat2_1[attach][{{$key+10}}]" value="{{$list['attach']}}" hidden/>
+                                <input class="form-control-file" name="kategori1_syarat2_1[attach][{{$key+30}}]" value="{{$list['attach']}}" hidden/>
                                 <a class="btn btn-primary btn-block" href="/{{$list['attach']}}" target="_blank">Attachment</a>
                             </div>
                             <div class="col-md-1 ml-0 mb-2">
@@ -92,7 +92,7 @@
         @foreach($data->kategori1_syarat2[1] as $key => $list)
             <div class="col-md-12 row mb-2">
                 <div class="col-md-11 row">
-                    <input class="form-control-file" name="kategori1_syarat2_2[attach][{{$key+10}}]" value="{{$list['attach']}}" hidden/>
+                    <input class="form-control-file" name="kategori1_syarat2_2[attach][{{$key+30}}]" value="{{$list['attach']}}" hidden/>
                     <a class="btn btn-primary btn-block" href="/{{$list['attach']}}" target="_blank">Attachment</a>
                 </div>
                 <div class="col-md-1 row ml-0">
@@ -153,11 +153,11 @@
                 <div id="">
                     <div id="kategori1_syarat3_1">
                         <?php $i = 10; ?>
-                        @foreach($data->kategori1_syarat3[0] as $key => $list)
+                        @foreach($data->kategori1_syarat3 as $key => $list)
                             <div class="row col-md-12 mb-2">
                                 <div class="col-md-3 row">
-                                    <input class="form-control-file" name="kategori1_syarat3_1[attach][{{$i++}}]" value="{{$list}}" hidden/>
-                                    <a class="btn btn-primary" href="/{{$list}}" target="_blank">Attachment</a>
+                                    <input class="form-control-file" name="kategori1_syarat3_1[attach][{{$i++}}]" value="{{$list['attach']}}" hidden/>
+                                    <a class="btn btn-primary" href="/{{$list['attach']}}" target="_blank">Attachment</a>
                                 </div>
                                 <div class="row col-md-1 ml-0">
                                     <button class="btn btn-danger btn-sm" style="margin-top: 2px" onclick="deleteFields2(event, this)"><i class="fas fa-trash-alt"></i></button>
@@ -202,7 +202,7 @@
                         @foreach($data->kategori1_syarat4[0] as $key => $list)
                             <div class="row col-md-12 mb-2">
                                 <div class="col-md-11 row">
-                                    <input class="form-control-file" name="kategori1_syarat4_1[attach][{{$key+10}}]" value="{{$list['attach']}}" hidden/>
+                                    <input class="form-control-file" name="kategori1_syarat4_1[attach][{{$key+30}}]" value="{{$list['attach']}}" hidden/>
                                     <a class="btn btn-primary btn-block" href="/{{$list['attach']}}" target="_blank">Attachment</a>
                                 </div>
                                 <div class="col-md-1 row ml-0">
@@ -227,7 +227,7 @@
                         @foreach($data->kategori1_syarat4[1] as $key => $list)
                             <div class="row col-md-12 mb-2">
                                 <div class="col-md-11 row">
-                                    <input class="form-control-file" name="kategori1_syarat4_2[attach][{{$key+10}}]" value="{{$list['attach']}}" hidden/>
+                                    <input class="form-control-file" name="kategori1_syarat4_2[attach][{{$key+30}}]" value="{{$list['attach']}}" hidden/>
                                     <a class="btn btn-primary btn-block" href="/{{$list['attach']}}" target="_blank">Attachment</a>
                                 </div>
                                 <div class="col-md-1 row ml-0">

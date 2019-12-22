@@ -258,6 +258,7 @@ class RequestController extends Controller
                 //$newKey = 0
                 foreach ($newData as $anjing) {
                     if (!isset($preparedData[$key][$newKey])) {
+                        unset($preparedData[$key][$newKey]);
                         continue;
                     }
                     if (is_null($anjing)) {
@@ -314,8 +315,8 @@ class RequestController extends Controller
                         }
                     }
                 }
-                if (isset($newData['attach']) && !is_null($newData['attach'])) {
-                    if ($request->hasFile("$key.attach.$newKey")) {
+                if (isset($newData['attach'])) {
+                    if (!is_string($newData['attach'])) {
                         $path = $newData['attach']->store("public/" . auth()->user()->id);
                         $path = str_replace('public/', 'storage/', $path);
                     } else {
@@ -326,6 +327,8 @@ class RequestController extends Controller
             }
             $preparedData[$key] = array_values($preparedData[$key]);
         }
+
+//        dd($preparedData);
 
         if (!isset($preparedData['kategori1_syarat2_1'])) {
             $preparedData['kategori1_syarat2_1'] = [];

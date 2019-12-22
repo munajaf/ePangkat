@@ -67,18 +67,18 @@
             <div class="row col-md-12">
                 <div class="form-group col-xs-10 col-sm-3 col-md-3 col-lg-4">
                         <label>Jawatan</label>
-                    <input type="text" class="form-control" name="kategori4_syarat2[jawatan][{{$key+10}}]" value="{{$list['jawatan']}}">
+                    <input type="text" class="form-control" name="kategori4_syarat2[jawatan][{{$key+30}}]" value="{{$list['jawatan']}}">
                 </div>
                 <div class="form-group col-xs-10 col-sm-3 col-md-3 col-lg-4">
                         <label>Peringkat</label>
-                    <select class="custom-select" name="kategori4_syarat2[peringkat][{{$key+10}}]">
+                    <select class="custom-select" name="kategori4_syarat2[peringkat][{{$key+30}}]">
                         <option value="1" {{($list['peringkat'] == 1) ? 'selected' : ''}}>Kebangsaan</option>
                         <option value="3" {{($list['peringkat'] == 2) ? 'selected' : ''}}>Antarabangsa</option>
                     </select>
                 </div>
                 <div class="form-group col-xs-10 col-sm-3 col-md-3 col-lg-3">
                         <label>Attachment</label>
-                    <input class="form-control-file" name="kategori4_syarat2[attach][{{$key+10}}]" value="{{$list['attach']}}" hidden/>
+                    <input class="form-control-file" name="kategori4_syarat2[attach][{{$key+30}}]" value="{{$list['attach']}}" hidden/>
                     <a class="btn btn-primary btn-block" href="/{{$list['attach']}}" target="_blank">File</a>
                 </div>
                 <div class="col-md-1 row">
@@ -90,23 +90,23 @@
     <div class="row col-md-12" id="kategori4_syarat2c">
         <div class="form-group col-xs-10 col-sm-3 col-md-3 col-lg-4">
             <label>Jawatan</label>
-            <input type="text" class="form-control" name="kategori4_syarat2[jawatan][]">
+            <input type="text" class="form-control" name="kategori4_syarat2[jawatan][0]">
         </div>
         <div class="form-group col-xs-10 col-sm-3 col-md-3 col-lg-4">
             <label>Peringkat</label>
-            <select class="custom-select" name="kategori4_syarat2[peringkat][]">
+            <select class="custom-select" name="kategori4_syarat2[peringkat][0]">
                 <option value="1">Kebangsaan</option>
                 <option value="3">Antarabangsa</option>
             </select>
         </div>
         <div class="form-group col-xs-10 col-sm-3 col-md-3 col-lg-3">
             <label>Attachment</label>
-            <input type="file" name="kategori4_syarat2[attach][]" accept="application/pdf"/>
+            <input type="file" name="kategori4_syarat2[attach][0]" accept="application/pdf"/>
         </div>
     </div>
     <div id="kategori4_syarat2w" class="col-md-12 row"></div>
     <button
-        onclick="addFields(event, 'kategori4_syarat2w', 'kategori4_syarat2c')"
+        onclick="addRowKategori4Syarat2(event)"
         class="btn btn-primary">Add
     </button>
 </div>
