@@ -66,26 +66,20 @@
         @foreach($data->kategori4_syarat2 as $key => $list)
             <div class="row col-md-12">
                 <div class="form-group col-xs-10 col-sm-3 col-md-3 col-lg-4">
-                    @if($key == 0)
                         <label>Jawatan</label>
-                    @endif
-                    <input type="text" class="form-control" name="kategori4_syarat2[jawatan][]" value="{{$list['jawatan']}}">
+                    <input type="text" class="form-control" name="kategori4_syarat2[jawatan][{{$key+10}}]" value="{{$list['jawatan']}}">
                 </div>
                 <div class="form-group col-xs-10 col-sm-3 col-md-3 col-lg-4">
-                    @if($key == 0)
                         <label>Peringkat</label>
-                    @endif
-                    <select class="custom-select" name="kategori4_syarat2[peringkat][]">
+                    <select class="custom-select" name="kategori4_syarat2[peringkat][{{$key+10}}]">
                         <option value="1" {{($list['peringkat'] == 1) ? 'selected' : ''}}>Kebangsaan</option>
                         <option value="3" {{($list['peringkat'] == 2) ? 'selected' : ''}}>Antarabangsa</option>
                     </select>
                 </div>
                 <div class="form-group col-xs-10 col-sm-3 col-md-3 col-lg-3">
-                    @if($key == 0)
                         <label>Attachment</label>
-                    @endif
-                    <input class="form-control-file" name="kategori4_syarat2[attach][]" value="{{$list['attach']}}" hidden/>
-                    <a class="btn btn-primary btn-block" href="/{{$list['attach']}}" target="_blank">File {{$key + 1}}</a>
+                    <input class="form-control-file" name="kategori4_syarat2[attach][{{$key+10}}]" value="{{$list['attach']}}" hidden/>
+                    <a class="btn btn-primary btn-block" href="/{{$list['attach']}}" target="_blank">File</a>
                 </div>
                 <div class="col-md-1 row">
                     <button class="btn btn-danger btn-sm" style="margin-top: 2px" onclick="deleteFields2(event, this)"><i class="fas fa-trash-alt"></i></button>

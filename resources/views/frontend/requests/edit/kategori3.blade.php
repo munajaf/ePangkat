@@ -12,26 +12,20 @@
             <div class="row col-md-12">
                 <div class="col-md-11 row">
                     <div class="form-group col-xs-10 col-sm-3 col-md-3 col-lg-4">
-                        @if($key == 0)
                             <label>Penglibatan</label>
-                        @endif
-                        <input type="text" class="form-control" name="kategori3_syarat1[penglibatan][]" value="{{$list['penglibatan']}}">
+                        <input type="text" class="form-control" name="kategori3_syarat1[penglibatan][{{$key+10}}]" value="{{$list['penglibatan']}}">
                     </div>
                     <div class="form-group col-xs-10 col-sm-3 col-md-3 col-lg-4">
-                        @if($key == 0)
                             <label>Peringkat</label>
-                        @endif
-                        <select class="custom-select" name="kategori3_syarat1[peringkat][]">
+                        <select class="custom-select" name="kategori3_syarat1[peringkat][{{$key+10}}]">
                             <option value="1" {{($list['peringkat'] == 1) ? 'selected' : ''}}>Dalam UPNM</option>
                             <option value="3" {{($list['peringkat'] == 2) ? 'selected' : ''}}>Luar UPNM</option>
                         </select>
                     </div>
                     <div class="form-group col-xs-10 col-sm-3 col-md-3 col-lg-4">
-                        @if($key == 0)
                             <label>Attachment</label>
-                        @endif
-                        <input class="form-control-file" name="kategori3_syarat1[attach][]" value="{{$list['attach']}}" hidden/>
-                        <a class="btn btn-primary btn-block" href="/{{$list['attach']}}" target="_blank">File {{$key + 1}}</a>
+                        <input class="form-control-file" name="kategori3_syarat1[attach][{{$key+10}}]" value="{{$list['attach']}}" hidden/>
+                        <a class="btn btn-primary btn-block" href="/{{$list['attach']}}" target="_blank">File</a>
                     </div>
                 </div>
                 <div class="col-md-1 row">
@@ -77,9 +71,7 @@
         @foreach($data->kategori3_syarat2 as $key => $list)
             <div class="col-md-12 row">
                 <div class="form-group col-xs-10 col-sm-3 col-md-3 col-lg-4">
-                    @if($key == 0)
                         <label>Nama Program</label>
-                    @endif
                     <input type="text" class="form-control" name="kategori3_syarat2[nama_program][]" value="{{$list['nama_program']}}">
                 </div>
                 <div class="row col-md-1">

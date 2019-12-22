@@ -321,11 +321,10 @@ class RequestController extends Controller
                     } else {
                         $path = $newData['attach'];
                     }
-
                     $preparedData[$key][$newKey]['attach'] = $path;
                 }
             }
-
+            $preparedData[$key] = array_values($preparedData[$key]);
         }
 
         if (!isset($preparedData['kategori1_syarat2_1'])) {
@@ -421,6 +420,7 @@ class RequestController extends Controller
 
             $kategori2Marks = 0;
             foreach ($preparedData['kategori2_syarat1'] as $kategori2) {
+
                 $kategori2Marks += (int)$kategori2['jenis'];
             }
             if ($kategori2Marks < 3) {
